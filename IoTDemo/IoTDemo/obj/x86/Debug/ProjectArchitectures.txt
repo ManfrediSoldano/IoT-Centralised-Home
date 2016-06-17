@@ -1,0 +1,1 @@
+C:\Users\manfr\Documents\Visual Studio 2015\Projects\IoTDemo\IoTDemo\IoTDemo.csproj;x86

@@ -1,0 +1,67 @@
+﻿<Page
+    x:Class="IoTDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IoTDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="510.667" Width="678.667">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" MinHeight="250"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:ConnectionId='1' Grid.Row="0" x:Name="pageTitle" Text="IoT centralised home" Style="{StaticResource HeaderTextBlockStyle}" 
+                        IsHitTestVisible="false" TextWrapping="NoWrap" HorizontalAlignment="Center" VerticalAlignment="Center" Height="61" Margin="-21,0,-21,0.333" Width="402"/>
+
+        <StackPanel x:ConnectionId='2' x:Name="ContentRoot" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="186,61,174,0.333" Height="0" Width="0"/>
+
+        <StackPanel x:ConnectionId='3' x:Name="ContentRootActions" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="180,61,180,0.333" Height="0" Width="0"/>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,61,-20,10.333" Height="240" Grid.RowSpan="4" Width="600">
+            <StackPanel>
+                <TextBlock x:ConnectionId='16' x:Name="PreviewTitle" Grid.Row="0" Grid.Column="0" Text="Preview"  Height="30" HorizontalAlignment="Center" Margin="0,20,0,0" Visibility="Visible"/>
+                <Canvas x:ConnectionId='17' x:Name="PreviewCanvas" Width="190" Height="190" Background="Gray"  Margin="0,0,0,0" Visibility="Visible">
+                    <CaptureElement x:ConnectionId='18' x:Name="previewElement" Width="190" Height="190" HorizontalAlignment="Left" Visibility="Visible" Canvas.Left="0"/>
+                </Canvas>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock x:ConnectionId='13' x:Name="ImageTitle" Grid.Row="0" Grid.Column="1" Text="Last captured photo" Height="30" HorizontalAlignment="Center" Margin="0,20,0,0" Visibility="Visible"/>
+                <Canvas x:ConnectionId='14' x:Name="PhotoCanvas" Grid.Row="1" Grid.Column="1" Width="190" Height="190" Background="Gray"  Margin="20,0,0,0" Visibility="Visible">
+                    <Image x:ConnectionId='15' x:Name="captureImage" Width="190" Height="190" Visibility="Visible" RenderTransformOrigin="0.393,0.516"/>
+                </Canvas>
+            </StackPanel>
+            <StackPanel/>
+            <StackPanel>
+                <!--<TextBlock  Grid.Row="0" Grid.Column="3" Text='Last Recorded Audio' Height='30' Margin='10,20,0,0'/>-->
+                <Canvas x:ConnectionId='11' Grid.Row="1" Grid.Column="3" x:Name='playbackCanvas3' Width='0' Height ='0' Margin="0,0,0,0">
+                    <MediaElement x:ConnectionId='12'  x:Name='playbackElement3' Width="0"  Height="0"/>
+                </Canvas>
+            </StackPanel>
+        </StackPanel>
+
+        <TextBlock Grid.Row="3" Text="LOG" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="540,23.667,77,0" Height="20" Width="62" RenderTransformOrigin="5.333,-6.583"/>
+        <ScrollViewer Grid.Row="3" Margin="500,30,40,1.833" HorizontalAlignment="Center" VerticalAlignment="Center" Height="175" Width="203" >
+            <TextBox x:ConnectionId='10'
+				x:Name="status" TextWrapping="Wrap" IsReadOnly="True" Height="175" Width="152" HorizontalAlignment="Left" VerticalAlignment="Top" 
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" RenderTransformOrigin="0,0" FontSize="10" Margin="30,0,0,0"/>
+        </ScrollViewer>
+        <Button x:ConnectionId='4' x:Name="luce1" Content="livingroom" HorizontalAlignment="Left" Margin="49,41.667,0,-46.667" Grid.Row="4" VerticalAlignment="Top" Height="37" Width="148"                    />
+        <Button x:ConnectionId='5' x:Name="luce2" Content="kitchen" HorizontalAlignment="Left" Margin="244,41.667,0,-46.667" Grid.Row="4" VerticalAlignment="Top" Height="37" Width="148"                    />
+        <Button x:ConnectionId='6' x:Name="luce3" Content="bedroom" HorizontalAlignment="Left" Margin="458,41.667,0,-46.667" Grid.Row="4" VerticalAlignment="Top" Height="37" Width="148"                    />
+        <Button x:ConnectionId='7' x:Name="luce4" Content="bathroom" HorizontalAlignment="Left" Margin="49,116.667,0,-121.667" Grid.Row="4" VerticalAlignment="Top" Height="37" Width="148"                    />
+        <Button x:ConnectionId='8' x:Name="luce5" Content="Stairs" HorizontalAlignment="Left" Margin="244,116.667,0,-121.667" Grid.Row="4" VerticalAlignment="Top" Height="37" Width="148"                    />
+        <Button x:ConnectionId='9' x:Name="luce6" Content="Turn off all" HorizontalAlignment="Left" Margin="458,116.667,0,-121.667" Grid.Row="4" VerticalAlignment="Top" Height="37" Width="148"                    />
+    </Grid>
+</Page>
+
